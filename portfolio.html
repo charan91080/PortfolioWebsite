@@ -1,0 +1,2681 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Charan Teja Jammisetti | 3D Developer Portfolio</title>
+
+<meta name="description"
+content="Portfolio of Charan Teja Jammisetti - CSE Honors Student, Developer, Cloud and Data Enthusiast">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#03040b;
+    --bg2:#070b18;
+    --cyan:#00eaff;
+    --blue:#168cff;
+    --purple:#8b5cf6;
+    --pink:#ff3cac;
+    --white:#ffffff;
+    --text:#e9f2ff;
+    --muted:#8e9bb4;
+    --glass:rgba(255,255,255,.055);
+    --border:rgba(255,255,255,.12);
+}
+
+html{
+    overflow-x:hidden;
+}
+
+body{
+    background:
+        radial-gradient(circle at 20% 10%,rgba(0,234,255,.08),transparent 25%),
+        radial-gradient(circle at 85% 40%,rgba(139,92,246,.08),transparent 30%),
+        var(--bg);
+    color:var(--text);
+    font-family:"Inter",sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-5;
+    pointer-events:none;
+}
+
+.grid-bg{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    mask-image:linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    background:rgba(3,4,11,.65);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:1000;
+}
+
+.logo{
+    font-family:"Orbitron";
+    font-weight:800;
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--cyan);
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:#c8d4e8;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--cyan);
+}
+
+.menu-btn{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:130px 8% 80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:70px;
+
+    perspective:1500px;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:9px 17px;
+
+    border:1px solid rgba(0,234,255,.3);
+
+    border-radius:50px;
+
+    color:var(--cyan);
+
+    background:rgba(0,234,255,.06);
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 0 25px rgba(0,234,255,.08);
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,90px);
+    line-height:1;
+    font-weight:800;
+}
+
+.gradient-text{
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            #ffffff,
+            var(--purple),
+            var(--pink)
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:gradientMove 5s infinite linear;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+.hero h2{
+    margin-top:25px;
+
+    font-size:23px;
+
+    color:#c7d4e8;
+}
+
+.hero p{
+    margin-top:20px;
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.primary{
+    color:#001014;
+
+    background:linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue)
+    );
+
+    box-shadow:
+        0 0 35px rgba(0,234,255,.25);
+}
+
+.secondary{
+    color:white;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.04);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* =========================================================
+   3D PROFILE
+========================================================= */
+
+.scene{
+    width:390px;
+    height:470px;
+
+    perspective:1200px;
+
+    position:relative;
+}
+
+.profile-card{
+    width:100%;
+    height:100%;
+
+    border-radius:35px;
+
+    padding:15px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,234,255,.17),
+            rgba(139,92,246,.12)
+        );
+
+    border:1px solid rgba(0,234,255,.25);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.65),
+        0 0 60px rgba(0,234,255,.1);
+
+    transition:transform .15s ease-out;
+}
+
+.profile-card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:35px;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            var(--cyan),
+            transparent,
+            var(--purple),
+            transparent
+        );
+
+    filter:blur(18px);
+
+    opacity:.35;
+
+    z-index:-1;
+
+    animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.profile-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    transform:translateZ(50px);
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+/* =========================================================
+   FLOATING OBJECTS
+========================================================= */
+
+.orbit{
+    position:absolute;
+
+    border:1px solid rgba(0,234,255,.25);
+
+    border-radius:50%;
+
+    transform-style:preserve-3d;
+
+    animation:orbitSpin 8s linear infinite;
+}
+
+.orbit1{
+    width:430px;
+    height:170px;
+
+    top:150px;
+    left:-20px;
+
+    transform:rotateX(65deg);
+
+}
+
+.orbit2{
+    width:470px;
+    height:190px;
+
+    top:140px;
+    left:-40px;
+
+    transform:rotateX(65deg) rotateY(60deg);
+
+    animation-duration:12s;
+}
+
+.orb{
+    position:absolute;
+
+    width:13px;
+    height:13px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 15px var(--cyan),
+        0 0 35px var(--cyan);
+}
+
+.orb1{
+    top:-6px;
+    left:50%;
+}
+
+.orb2{
+    right:-6px;
+    top:50%;
+    background:var(--purple);
+    box-shadow:
+        0 0 15px var(--purple),
+        0 0 35px var(--purple);
+}
+
+@keyframes orbitSpin{
+    from{
+        transform:rotateX(65deg) rotateZ(0deg);
+    }
+
+    to{
+        transform:rotateX(65deg) rotateZ(360deg);
+    }
+}
+
+.floating-label{
+    position:absolute;
+
+    padding:11px 16px;
+
+    border-radius:12px;
+
+    background:rgba(5,10,25,.85);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid var(--border);
+
+    font-size:12px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+    animation:float 4s ease-in-out infinite;
+}
+
+.label1{
+    left:-60px;
+    top:50px;
+}
+
+.label2{
+    right:-55px;
+    bottom:70px;
+
+    animation-delay:1s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    padding:110px 8%;
+}
+
+.section-header{
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 60px;
+}
+
+.section-header h2{
+    font-family:"Orbitron";
+
+    font-size:38px;
+}
+
+.section-header h2 span{
+    color:var(--cyan);
+}
+
+.section-header p{
+    color:var(--muted);
+
+    margin-top:15px;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.glass{
+    padding:30px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.glass:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(0,234,255,.3);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.3);
+}
+
+.icon{
+    font-size:35px;
+
+    margin-bottom:20px;
+}
+
+.glass h3{
+    color:var(--cyan);
+
+    margin-bottom:12px;
+}
+
+.glass p{
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.skill{
+    padding:13px 20px;
+
+    border-radius:50px;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.035);
+
+    color:#d8e4f7;
+
+    transition:.3s;
+}
+
+.skill:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(0,234,255,.12);
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+.project{
+    min-height:300px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.02)
+        );
+
+    border:1px solid var(--border);
+
+    transform-style:preserve-3d;
+
+    transition:.2s;
+}
+
+.project::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    background:var(--cyan);
+
+    filter:blur(100px);
+
+    opacity:.1;
+
+    top:-80px;
+    right:-80px;
+}
+
+.project-number{
+    color:var(--cyan);
+
+    font-family:"Orbitron";
+
+    font-size:12px;
+}
+
+.project h3{
+    margin-top:30px;
+
+    font-size:21px;
+}
+
+.project p{
+    color:var(--muted);
+
+    line-height:1.7;
+
+    margin-top:15px;
+}
+
+.project-tech{
+    color:#8cefff;
+
+    font-size:12px;
+
+    margin-top:20px;
+}
+
+.view-btn{
+    margin-top:25px;
+
+    background:none;
+
+    border:1px solid var(--border);
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.view-btn:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline{
+    max-width:900px;
+
+    margin:auto;
+
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:16px;
+
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            var(--cyan),
+            var(--purple)
+        );
+}
+
+.timeline-item{
+    position:relative;
+
+    padding-left:60px;
+
+    margin-bottom:50px;
+}
+
+.timeline-dot{
+    position:absolute;
+
+    left:7px;
+
+    top:5px;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 25px var(--cyan);
+}
+
+.timeline-item h3{
+    font-size:21px;
+}
+
+.timeline-item h4{
+    color:var(--cyan);
+
+    margin-top:6px;
+}
+
+.timeline-item p{
+    color:var(--muted);
+
+    line-height:1.7;
+
+    margin-top:10px;
+}
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.certifications{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+.cert{
+    padding:25px;
+
+    border-radius:20px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+}
+
+.cert:hover{
+    transform:translateY(-6px);
+
+    border-color:var(--purple);
+
+    box-shadow:
+        0 15px 50px rgba(139,92,246,.1);
+}
+
+.cert h3{
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+.cert p{
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-wrapper{
+    max-width:900px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+}
+
+.contact-info{
+    padding:35px;
+
+    border-radius:25px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+}
+
+.contact-info h3{
+    color:var(--cyan);
+
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+.contact-links{
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.contact-links a{
+    color:#dbe8f8;
+
+    text-decoration:none;
+}
+
+.contact-links a:hover{
+    color:var(--cyan);
+}
+
+form{
+    padding:35px;
+
+    border-radius:25px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+}
+
+.input{
+    width:100%;
+
+    padding:14px 16px;
+
+    margin-bottom:15px;
+
+    background:rgba(0,0,0,.25);
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-family:inherit;
+}
+
+.input:focus{
+    border-color:var(--cyan);
+
+    box-shadow:
+        0 0 15px rgba(0,234,255,.08);
+}
+
+textarea{
+    min-height:130px;
+
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    color:#001018;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(0,234,255,.2);
+}
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.socials{
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:45px;
+}
+
+.socials a{
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.socials a:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(12px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    z-index:2000;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    max-width:700px;
+
+    width:100%;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,20,42,.98),
+            rgba(5,8,20,.98)
+        );
+
+    border:1px solid rgba(0,234,255,.25);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7);
+
+    position:relative;
+
+    animation:modalIn .3s ease;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:scale(.9) translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.close{
+    position:absolute;
+
+    right:20px;
+    top:15px;
+
+    font-size:28px;
+
+    color:#aaa;
+
+    cursor:pointer;
+}
+
+.close:hover{
+    color:var(--cyan);
+}
+
+.modal-box h2{
+    color:var(--cyan);
+
+    margin-bottom:15px;
+}
+
+.modal-box p{
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+.modal-box ul{
+    margin:20px 0 0 20px;
+
+    color:#c5d2e5;
+
+    line-height:2;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    text-align:center;
+
+    padding:30px;
+
+    border-top:1px solid var(--border);
+
+    color:#69758b;
+
+    font-size:13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
+
+    .hero{
+        flex-direction:column-reverse;
+
+        text-align:center;
+    }
+
+    .hero-content{
+        max-width:800px;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .scene{
+        width:300px;
+        height:370px;
+    }
+
+    .orbit1,
+    .orbit2{
+        display:none;
+    }
+
+    .about-grid,
+    .projects,
+    .certifications{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    nav ul{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .about-grid,
+    .projects,
+    .certifications{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .section-header h2{
+        font-size:30px;
+    }
+
+    .hero{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .floating-label{
+        display:none;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PARTICLE CANVAS
+===================================================== -->
+
+<canvas id="particles"></canvas>
+
+<div class="grid-bg"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        CHARAN<span>.</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-btn">
+        ☰
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            CSE HONORS • DEVELOPER • CLOUD & DATA
+        </div>
+
+        <h1>
+
+            Hi, I'm<br>
+
+            <span class="gradient-text">
+                Charan Teja
+            </span>
+
+        </h1>
+
+        <h2>
+            Software Developer & Technology Enthusiast
+        </h2>
+
+        <p>
+
+            I build modern web applications, cloud-based solutions,
+            data-driven systems and innovative technology projects
+            while continuously exploring software engineering,
+            AI, cloud computing and emerging technologies.
+
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn primary">
+                Explore Projects →
+            </a>
+
+            <a href="resume.pdf"
+               download
+               class="btn secondary">
+
+                📄 Download Resume
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 3D PHOTO -->
+
+    <div class="scene">
+
+        <div class="orbit orbit1">
+            <div class="orb orb1"></div>
+        </div>
+
+        <div class="orbit orbit2">
+            <div class="orb orb2"></div>
+        </div>
+
+        <div class="floating-label label1">
+            ☁ Cloud & Data
+        </div>
+
+        <div class="floating-label label2">
+            ⚡ Full Stack Developer
+        </div>
+
+        <div class="profile-card" id="profileCard">
+
+            <img
+                src="profile.jpg"
+                alt="Charan Teja Jammisetti"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-header">
+
+        <h2>
+            About <span>Me</span>
+        </h2>
+
+        <p>
+            Technology, learning and building practical solutions.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="glass">
+
+            <div class="icon">👨‍💻</div>
+
+            <h3>Developer</h3>
+
+            <p>
+                Interested in software development, web applications,
+                backend systems, APIs and microservice architectures.
+            </p>
+
+        </div>
+
+
+        <div class="glass">
+
+            <div class="icon">☁️</div>
+
+            <h3>Cloud & Data</h3>
+
+            <p>
+                Exploring cloud computing, AWS, Google Cloud,
+                data analytics, visualization and data-driven systems.
+            </p>
+
+        </div>
+
+
+        <div class="glass">
+
+            <div class="icon">🚀</div>
+
+            <h3>Problem Solver</h3>
+
+            <p>
+                Enjoy developing practical projects that combine
+                software, cloud, data, IoT and emerging technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="section-header">
+
+        <h2>
+            Technical <span>Skills</span>
+        </h2>
+
+        <p>
+            Technologies and tools I work with and continue to learn.
+        </p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">Java</div>
+        <div class="skill">Python</div>
+        <div class="skill">C</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Spring Boot</div>
+        <div class="skill">REST API</div>
+        <div class="skill">Microservices</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">SQL</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Google Cloud</div>
+        <div class="skill">Azure</div>
+        <div class="skill">Tableau</div>
+        <div class="skill">Data Analytics</div>
+        <div class="skill">Git</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">IoT</div>
+        <div class="skill">AI & Data Science</div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="section-header">
+
+        <h2>
+            Featured <span>Projects</span>
+        </h2>
+
+        <p>
+            Selected projects demonstrating software, cloud,
+            data and IoT development.
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 01 • WEB
+            </div>
+
+            <h3>
+                Student Scholarship Platform
+            </h3>
+
+            <p>
+                Platform for managing student scholarship and
+                financial-aid applications, documents and status.
+            </p>
+
+            <div class="project-tech">
+                HTML • CSS • JavaScript • Web Development
+            </div>
+
+            <button
+                class="view-btn"
+                onclick="openModal('scholarship')">
+
+                View Project →
+
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 02 • FULL STACK
+            </div>
+
+            <h3>
+                Career Guidance Platform
+            </h3>
+
+            <p>
+                Career guidance and counselling platform connecting
+                students with resources and counsellors.
+            </p>
+
+            <div class="project-tech">
+                React • JavaScript • Web Development
+            </div>
+
+            <button
+                class="view-btn"
+                onclick="openModal('career')">
+
+                View Project →
+
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 03 • MICROSERVICES
+            </div>
+
+            <h3>
+                Digital Election System
+            </h3>
+
+            <p>
+                Microservice-based digital election and vote-auditing
+                project with authentication and service separation.
+            </p>
+
+            <div class="project-tech">
+                Spring Boot • JWT • Eureka • API Gateway
+            </div>
+
+            <button
+                class="view-btn"
+                onclick="openModal('election')">
+
+                View Project →
+
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 04 • CLOUD
+            </div>
+
+            <h3>
+                S3 Audit Records
+            </h3>
+
+            <p>
+                AWS project using S3 Object Lock concepts for
+                write-once audit records.
+            </p>
+
+            <div class="project-tech">
+                AWS • S3 • Object Lock
+            </div>
+
+            <button
+                class="view-btn"
+                onclick="openModal('s3')">
+
+                View Project →
+
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT 5 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 05 • IoT
+            </div>
+
+            <h3>
+                Automatic Irrigation
+            </h3>
+
+            <p>
+                Smart irrigation system using soil moisture sensing
+                and automatic pump control.
+            </p>
+
+            <div class="project-tech">
+                ARM7 • LPC2148 • ADC • Sensors
+            </div>
+
+            <button
+                class="view-btn"
+                onclick="openModal('irrigation')">
+
+                View Project →
+
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT 6 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 06 • DATA
+            </div>
+
+            <h3>
+                Data Analytics
+            </h3>
+
+            <p>
+                Data analysis and visualization projects using
+                datasets, dashboards and business insights.
+            </p>
+
+            <div class="project-tech">
+                Tableau • Excel • Data Analytics
+            </div>
+
+            <button
+                class="view-btn"
+                onclick="openModal('data')">
+
+                View Project →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+    <div class="section-header">
+
+        <h2>
+            Experience & <span>Journey</span>
+        </h2>
+
+        <p>
+            Selected professional and learning experiences.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                Web Development Internship
+            </h3>
+
+            <h4>
+                ALFA INNOVATION
+            </h4>
+
+            <p>
+                Gained practical exposure to web development,
+                application development and software engineering.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                Data Science & Analysis
+            </h3>
+
+            <h4>
+                Future Interns
+            </h4>
+
+            <p>
+                Worked with data analysis concepts and developed
+                practical understanding of data-driven problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                Google Cloud & Data Analytics
+            </h3>
+
+            <h4>
+                AICTE EduSkills
+            </h4>
+
+            <p>
+                Developed knowledge of cloud technologies,
+                Google Cloud and data analytics.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                CSE Honors
+            </h3>
+
+            <h4>
+                Computer Science & Engineering
+            </h4>
+
+            <p>
+                Building knowledge across programming, software
+                engineering, cloud, data, IoT and emerging technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section>
+
+    <div class="section-header">
+
+        <h2>
+            Certifications & <span>Achievements</span>
+        </h2>
+
+        <p>
+            Selected professional learning credentials.
+        </p>
+
+    </div>
+
+
+    <div class="certifications">
+
+        <div class="cert">
+            <h3>AWS Cloud Practitioner</h3>
+            <p>Amazon Web Services</p>
+        </div>
+
+        <div class="cert">
+            <h3>AWS Academy Cloud Foundations</h3>
+            <p>Amazon Web Services</p>
+        </div>
+
+        <div class="cert">
+            <h3>Microsoft Azure Essentials</h3>
+            <p>Microsoft / LinkedIn Learning</p>
+        </div>
+
+        <div class="cert">
+            <h3>Deloitte Data Analytics</h3>
+            <p>Forage Job Simulation</p>
+        </div>
+
+        <div class="cert">
+            <h3>Bank of America Investment Banking</h3>
+            <p>Forage Job Simulation</p>
+        </div>
+
+        <div class="cert">
+            <h3>Wells Fargo Software Engineering</h3>
+            <p>Forage Job Simulation</p>
+        </div>
+
+        <div class="cert">
+            <h3>Tata Data Visualisation</h3>
+            <p>Forage Job Simulation</p>
+        </div>
+
+        <div class="cert">
+            <h3>Data Science with AI</h3>
+            <p>Internshala Trainings</p>
+        </div>
+
+        <div class="cert">
+            <h3>Web Development</h3>
+            <p>Professional Internship Experience</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="9381369005">
+
+    <div class="section-header">
+
+        <h2>
+            Let's <span>Connect</span>
+        </h2>
+
+        <p>
+            Have a project, opportunity or idea?
+            Send me a message.
+        </p>
+
+    </div>
+
+
+    <div class="contact-wrapper">
+
+
+        <div class="contact-info">
+
+            <h3>
+                Let's build something.
+            </h3>
+
+            <p>
+
+                I'm interested in software development,
+                cloud computing, data analytics, AI,
+                web development and innovative technology projects.
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a href="https://www.linkedin.com/in/charan-teja-jammisetti-9ba1a8360/"
+                   target="_blank">
+
+                    🔗 LinkedIn
+
+                </a>
+
+                <a href="https://github.com/"
+                   target="_blank">
+
+                    💻 GitHub
+
+                </a>
+
+                <a href="mailto:charantejonline@gmail.com">
+
+                    ✉ Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WORKING FORM -->
+
+        <form
+            action="https://formsubmit.co/charantejonline@gmail.com@gmail.com"
+            method="POST">
+
+            <!-- FormSubmit settings -->
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Portfolio Contact">
+
+            <input
+                type="hidden"
+                name="_captcha"
+                value="false">
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table">
+
+
+            <input
+                class="input"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required>
+
+
+            <input
+                class="input"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required>
+
+
+            <input
+                class="input"
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required>
+
+
+            <textarea
+                class="input"
+                name="message"
+                placeholder="Your Message"
+                required></textarea>
+
+
+            <button
+                class="submit"
+                type="submit">
+
+                Send Message 🚀
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="socials">
+
+        <a
+            href="https://www.linkedin.com/in/charan-teja-jammisetti-9ba1a8360/"
+            target="_blank">
+
+            LinkedIn ↗
+
+        </a>
+
+        <a
+            href="https://github.com/"
+            target="_blank">
+
+            GitHub ↗
+
+        </a>
+
+        <a href="#home">
+
+            Back to Top ↑
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECT MODALS
+===================================================== -->
+
+<div class="modal" id="projectModal">
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </span>
+
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Charan Teja Jammisetti
+
+    <br><br>
+
+    Designed & Built with HTML, CSS & JavaScript
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   PARTICLE SYSTEM
+========================================================= */
+
+const canvas =
+    document.getElementById("particles");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas(){
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+class Particle{
+
+    constructor(){
+
+        this.x =
+            Math.random() *
+            canvas.width;
+
+        this.y =
+            Math.random() *
+            canvas.height;
+
+        this.size =
+            Math.random() * 2 + .5;
+
+        this.speedX =
+            (Math.random() - .5) * .5;
+
+        this.speedY =
+            (Math.random() - .5) * .5;
+
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(this.x < 0 ||
+           this.x > canvas.width){
+
+            this.speedX *= -1;
+
+        }
+
+        if(this.y < 0 ||
+           this.y > canvas.height){
+
+            this.speedY *= -1;
+
+        }
+
+    }
+
+    draw(){
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            "rgba(0,234,255,.7)";
+
+        ctx.fill();
+
+    }
+
+}
+
+
+function createParticles(){
+
+    particles = [];
+
+    const count =
+        window.innerWidth < 700
+        ? 45
+        : 100;
+
+    for(let i=0;i<count;i++){
+
+        particles.push(
+            new Particle()
+        );
+
+    }
+
+}
+
+
+createParticles();
+
+
+function connectParticles(){
+
+    for(let a=0;a<particles.length;a++){
+
+        for(let b=a+1;b<particles.length;b++){
+
+            const dx =
+                particles[a].x -
+                particles[b].x;
+
+            const dy =
+                particles[a].y -
+                particles[b].y;
+
+            const distance =
+                Math.sqrt(
+                    dx*dx + dy*dy
+                );
+
+            if(distance < 110){
+
+                ctx.beginPath();
+
+                ctx.strokeStyle =
+                    `rgba(
+                        0,
+                        234,
+                        255,
+                        ${1-distance/110}
+                    )`;
+
+                ctx.lineWidth=.3;
+
+                ctx.moveTo(
+                    particles[a].x,
+                    particles[a].y
+                );
+
+                ctx.lineTo(
+                    particles[b].x,
+                    particles[b].y
+                );
+
+                ctx.stroke();
+
+            }
+
+        }
+
+    }
+
+}
+
+
+function animateParticles(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(
+        particle => {
+
+            particle.update();
+            particle.draw();
+
+        }
+    );
+
+    connectParticles();
+
+    requestAnimationFrame(
+        animateParticles
+    );
+
+}
+
+
+animateParticles();
+
+
+/* =========================================================
+   3D PROFILE TILT
+========================================================= */
+
+const profile =
+    document.getElementById(
+        "profileCard"
+    );
+
+const scene =
+    document.querySelector(".scene");
+
+
+scene.addEventListener(
+    "mousemove",
+    function(e){
+
+        const rect =
+            scene.getBoundingClientRect();
+
+        const x =
+            e.clientX - rect.left;
+
+        const y =
+            e.clientY - rect.top;
+
+        const rotateY =
+            ((x / rect.width) - .5) * 20;
+
+        const rotateX =
+            ((y / rect.height) - .5) * -20;
+
+        profile.style.transform =
+            `rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateZ(20px)`;
+
+    }
+);
+
+
+scene.addEventListener(
+    "mouseleave",
+    function(){
+
+        profile.style.transform =
+            "rotateX(0deg) rotateY(0deg)";
+
+    }
+);
+
+
+/* =========================================================
+   PROJECT CARD 3D TILT
+========================================================= */
+
+document
+.querySelectorAll(".project")
+.forEach(card => {
+
+    card.addEventListener(
+        "mousemove",
+        function(e){
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                e.clientX - rect.left;
+
+            const y =
+                e.clientY - rect.top;
+
+            const rotateY =
+                ((x / rect.width) - .5) * 8;
+
+            const rotateX =
+                ((y / rect.height) - .5) * -8;
+
+            card.style.transform =
+                `perspective(900px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-8px)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        function(){
+
+            card.style.transform =
+                "";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   PROJECT MODALS
+========================================================= */
+
+const projectData = {
+
+    scholarship: {
+
+        title:
+            "Student Scholarship & Financial Aid Platform",
+
+        text:
+            "A web platform designed to help students manage scholarship and financial-aid applications digitally.",
+
+        features:[
+            "Student registration and login",
+            "Scholarship application management",
+            "Document upload",
+            "Application status tracking",
+            "Admin approval workflow",
+            "Application history",
+            "Report generation"
+        ]
+
+    },
+
+
+    career: {
+
+        title:
+            "Career Guidance & Counseling Platform",
+
+        text:
+            "A platform designed to help students explore career paths, access resources and connect with counsellors.",
+
+        features:[
+            "Student career guidance",
+            "Career resources",
+            "Counselling connections",
+            "Skill-based recommendations",
+            "Admin resource management",
+            "Student engagement"
+        ]
+
+    },
+
+
+    election: {
+
+        title:
+            "Tamper-Resistant Digital Election & Vote Auditing",
+
+        text:
+            "A microservice-oriented digital election project separating authentication, elections, voting and results into independent services.",
+
+        features:[
+            "JWT authentication",
+            "Election management",
+            "Voting service",
+            "Result service",
+            "API Gateway",
+            "Eureka service discovery",
+            "Vote auditing concepts"
+        ]
+
+    },
+
+
+    s3: {
+
+        title:
+            "S3 Write-Once Audit Records",
+
+        text:
+            "Cloud security project using Amazon S3 Object Lock concepts to preserve audit records against modification and deletion during retention.",
+
+        features:[
+            "Amazon S3",
+            "Object Lock",
+            "Write-once records",
+            "Retention protection",
+            "Audit record preservation",
+            "Cloud security"
+        ]
+
+    },
+
+
+    irrigation: {
+
+        title:
+            "Automatic Irrigation System",
+
+        text:
+            "IoT-based irrigation system that uses soil moisture information to determine when the water pump should operate.",
+
+        features:[
+            "Soil moisture sensing",
+            "ARM7 LPC2148",
+            "ADC processing",
+            "Relay control",
+            "Automatic pump operation",
+            "Water-saving approach"
+        ]
+
+    },
+
+
+    data: {
+
+        title:
+            "Data Analytics & Visualization",
+
+        text:
+            "Data analytics projects focused on transforming datasets into dashboards, visual insights and business-oriented observations.",
+
+        features:[
+            "Data cleaning",
+            "Data analysis",
+            "Tableau dashboards",
+            "Excel analysis",
+            "Business insights",
+            "Data visualization"
+        ]
+
+    }
+
+};
+
+
+function openModal(project){
+
+    const data =
+        projectData[project];
+
+    let html = `
+        <h2>${data.title}</h2>
+
+        <p>
+            ${data.text}
+        </p>
+
+        <ul>
+    `;
+
+    data.features.forEach(
+        feature => {
+
+            html +=
+                `<li>${feature}</li>`;
+
+        }
+    );
+
+    html += `
+        </ul>
+    `;
+
+    document
+        .getElementById(
+            "modalContent"
+        )
+        .innerHTML = html;
+
+    document
+        .getElementById(
+            "projectModal"
+        )
+        .classList.add("active");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById(
+            "projectModal"
+        )
+        .classList.remove("active");
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+document
+.getElementById("projectModal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+    document.querySelector(".menu-btn");
+
+const navList =
+    document.querySelector("nav ul");
+
+menuBtn.addEventListener(
+    "click",
+    function(){
+
+        if(navList.style.display === "flex"){
+
+            navList.style.display =
+                "";
+
+        }else{
+
+            navList.style.display =
+                "flex";
+
+            navList.style.position =
+                "absolute";
+
+            navList.style.top =
+                "75px";
+
+            navList.style.left =
+                "0";
+
+            navList.style.width =
+                "100%";
+
+            navList.style.padding =
+                "25px";
+
+            navList.style.flexDirection =
+                "column";
+
+            navList.style.background =
+                "rgba(3,4,11,.95)";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```
